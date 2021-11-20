@@ -29,9 +29,6 @@ public class MainFrameController {
             if(e.getSource() == mf.viewCamera1Btn) {
                 cs.openCamera(1, "Camera 2");
             }
-            else if(e.getSource() == mf.liveJMenuItem) {
-                //show webcam panel
-            }
         }
     }
 }
