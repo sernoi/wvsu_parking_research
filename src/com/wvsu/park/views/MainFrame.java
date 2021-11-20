@@ -5,9 +5,7 @@
  */
 package com.wvsu.park.views;
 
-import com.wvsu.park.controllers.MainFrameController;
 import java.awt.event.ActionListener;
-import javax.swing.event.MenuListener;
 
 /**
  *
@@ -61,6 +59,7 @@ public class MainFrame extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         liveJMenuItem = new javax.swing.JMenuItem();
         playbackJMenuItem = new javax.swing.JMenuItem();
 
@@ -293,6 +292,9 @@ public class MainFrame extends javax.swing.JFrame {
 
         jMenu2.setText("Video");
 
+        jMenuItem1.setText("Camera");
+        jMenu2.add(jMenuItem1);
+
         liveJMenuItem.setText("View Live");
         jMenu2.add(liveJMenuItem);
 
@@ -344,6 +346,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     public javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

@@ -5,7 +5,6 @@
  */
 package com.wvsu.park.serviceprovider;
 
-import com.github.sarxos.webcam.Webcam;
 import com.github.sarxos.webcam.WebcamPanel;
 import com.wvsu.park.services.CameraService;
 import javax.swing.JFrame;

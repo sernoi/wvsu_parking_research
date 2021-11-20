@@ -1,6 +1,5 @@
 package com.wvsu.park.controllers;
 
-import com.github.sarxos.webcam.Webcam;
 import com.wvsu.park.serviceprovider.CameraServiceImpl;
 import com.wvsu.park.serviceprovider.MainFrameServiceImpl;
 import com.wvsu.park.serviceprovider.ParkingStatusServiceImpl;
@@ -11,13 +10,6 @@ import com.wvsu.park.views.MainFrame;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-import javax.swing.event.MenuEvent;
-import javax.swing.event.MenuListener;
 
 public class MainFrameController {
     MainFrame mf;
@@ -28,7 +20,7 @@ public class MainFrameController {
     public MainFrameController(MainFrame mf) {
         this.mf = mf;
         this.mf.buttonEvents(new ButtonEvents());
-        this.cs.startVideoRecording();
+        //this.cs.startVideoRecording();
     }
     
     class ButtonEvents implements ActionListener {
