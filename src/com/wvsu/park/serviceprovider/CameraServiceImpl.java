@@ -32,6 +32,9 @@ import java.util.logging.Logger;
  */
 public class CameraServiceImpl implements CameraService{
 
+    Dimension size = WebcamResolution.VGA.getSize();
+    Webcam webcam = openWebcam(size);
+    
     @Override
     public void openCamera() {
         WebcamPanel panel = new WebcamPanel(AppCamera.CAMERA);
@@ -56,12 +59,11 @@ public class CameraServiceImpl implements CameraService{
         //Initialize media writer
         IMediaWriter writer = ToolFactory.makeWriter(saveFile.getPath());
         //Set video recording size
-        Dimension size = WebcamResolution.VGA.getSize();
+        
 
         writer.addVideoStream(0, 0, ICodec.ID.CODEC_ID_H264, size.width, size.height);
 
         long start = System.currentTimeMillis();
-        Webcam webcam = openWebcam(size);
 
         for (int i = 0; i < 50; i++) {
             BufferedImage image = ConverterFactory.convertToType(webcam.getImage(), BufferedImage.TYPE_3BYTE_BGR);
@@ -79,7 +81,6 @@ public class CameraServiceImpl implements CameraService{
                 Logger.getLogger(CameraServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
         writer.close();
         System.out.println("Video recorded to the file: " + saveFile.getAbsolutePath());
     }

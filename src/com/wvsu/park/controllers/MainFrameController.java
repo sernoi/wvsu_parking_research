@@ -10,6 +10,8 @@ import com.wvsu.park.views.MainFrame;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class MainFrameController {
     MainFrame mf;
@@ -20,7 +22,10 @@ public class MainFrameController {
     public MainFrameController(MainFrame mf) {
         this.mf = mf;
         this.mf.buttonEvents(new ButtonEvents());
-        this.cs.startVideoRecording();
+        
+        while(true){
+            this.cs.startVideoRecording();
+        }   
     }
     
     class ButtonEvents implements ActionListener {
