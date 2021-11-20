@@ -20,14 +20,14 @@ public class MainFrameController {
     public MainFrameController(MainFrame mf) {
         this.mf = mf;
         this.mf.buttonEvents(new ButtonEvents());
-        //this.cs.startVideoRecording();
+        this.cs.startVideoRecording();
     }
     
     class ButtonEvents implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             if(e.getSource() == mf.viewCamera1Btn) {
-                cs.openCamera(1, "Camera 2");
+                cs.openCamera();
             }
         }
     }

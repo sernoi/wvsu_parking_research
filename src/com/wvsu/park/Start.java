@@ -12,12 +12,8 @@ public class Start {
     public static void main(String[] args) {
         Start st = new Start();
         st.chooseCamera();
-       // MainFrame mf = new MainFrame();
-       // mf.setVisible(true);
-       // mf.setExtendedState(JFrame.MAXIMIZED_BOTH);
-       // new MainFrameController(mf);
-        //camera starts recording...
     }
+    
     
     private void chooseCamera() {
         try
@@ -32,12 +28,13 @@ public class Start {
             {
                 System.exit(0);
             }
-            Webcam CAMERA = (Webcam) selectedValue;
-            //String cameraString = (String) selectedValue;
+            AppCamera.CAMERA = (Webcam) selectedValue;
+            MainFrame mf = new MainFrame();
+            mf.setVisible(true);
+            new MainFrameController(mf);
         }
         catch(ArrayIndexOutOfBoundsException e)
         {
-            System.out.println("nagsulod");
             int dialogButton = JOptionPane.YES_NO_OPTION;
             int dialogResult = JOptionPane.showConfirmDialog (null, "Would You Like to "
                                + "Continue Without a camera?","Device Not Found",dialogButton);

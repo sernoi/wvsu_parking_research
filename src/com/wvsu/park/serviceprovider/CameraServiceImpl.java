@@ -10,6 +10,7 @@ import com.wvsu.park.services.CameraService;
 import javax.swing.JFrame;
 import com.github.sarxos.webcam.Webcam;
 import com.github.sarxos.webcam.WebcamResolution;
+import com.wvsu.park.global.AppCamera;
 import com.xuggle.mediatool.IMediaWriter;
 import com.xuggle.mediatool.ToolFactory;
 import com.xuggle.xuggler.ICodec;
@@ -32,11 +33,11 @@ import java.util.logging.Logger;
 public class CameraServiceImpl implements CameraService{
 
     @Override
-    public void openCamera(int camIndex, String deviceName) {
-        WebcamPanel panel = new WebcamPanel(Webcam.getWebcams().get(camIndex));
+    public void openCamera() {
+        WebcamPanel panel = new WebcamPanel(AppCamera.CAMERA);
         panel.setFPSLimit(1);
 
-        JFrame f = new JFrame(deviceName);
+        JFrame f = new JFrame(AppCamera.CAMERA.toString());
         f.add(panel);
         f.pack();
         f.setExtendedState(JFrame.MAXIMIZED_BOTH); 
@@ -84,7 +85,7 @@ public class CameraServiceImpl implements CameraService{
     }
 
     private Webcam openWebcam(Dimension size) {
-        Webcam webcam = Webcam.getWebcams().get(1);
+        Webcam webcam = AppCamera.CAMERA;
         webcam.setViewSize(size);
         webcam.open();
         return webcam;

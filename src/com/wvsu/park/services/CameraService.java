@@ -10,6 +10,6 @@ package com.wvsu.park.services;
  * @author sernoi
  */
 public interface CameraService {
-    void openCamera(int camIndex, String deviceName);
+    void openCamera();
     void startVideoRecording();
 }
